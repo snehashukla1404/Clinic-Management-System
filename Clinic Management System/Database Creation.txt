@@ -1,0 +1,196 @@
+CREATE TABLE Patient (
+p_id char(4),
+f_name varchar(30) not null,
+l_name varchar(30),
+DOB date,
+address varchar(30),
+emp_id char(4),
+Primary Key (p_id));
+
+CREATE TABLE Patient_mail_details (
+p_id char(4),
+email_id varchar(40),
+Primary Key (p_id,email_id),
+foreign key (p_id) references Patient(p_id) on delete cascade);
+
+CREATE TABLE Patient_phone_number (
+p_id char(4),
+phone_number numeric (10,0),
+Primary Key (p_id, phone_number),
+foreign key (p_id) references Patient(p_id) on delete cascade);
+
+CREATE TABLE Employee (
+emp_id char(4),
+f_name varchar(30) not null,
+l_name varchar(30),
+DOB date,
+address varchar(30),
+salary int,
+primary key (emp_id));
+
+CREATE TABLE Employee_mail_details (
+emp_id char(4),
+email_id varchar(40),
+Primary Key (emp_id,email_id),
+foreign key (emp_id) references Employee(emp_id) on delete cascade);
+
+CREATE TABLE Employee_phone_number (
+emp_id char(4),
+phone_number numeric (10,0),
+Primary Key (emp_id, phone_number),
+foreign key (emp_id) references Employee(emp_id) on delete cascade);
+
+ALTER TABLE Patient
+ADD foreign Key (emp_id)
+REFERENCES Employee(emp_id);
+
+CREATE TABLE Receptionist (
+emp_id char(4),
+working_hours_weekly int,
+Primary Key (emp_id,working_hours_weekly),
+Foreign key (emp_id) references Employee(emp_id) on  delete cascade);
+
+CREATE TABLE Nurse (
+emp_id char(4),
+working_hours_weekly int,
+Primary Key (emp_id,working_hours_weekly),
+Foreign key (emp_id) references Employee(emp_id) on delete cascade);
+
+CREATE TABLE trainee (
+emp_id char(4),
+Working_hours_weekly int,
+Experience int,
+Specialization varchar(15),
+Primary Key (emp_id,Specialization),
+Foreign key (emp_id) references Employee(emp_id) on delete cascade);
+
+CREATE TABLE Permanent (
+emp_id char(4),
+Working_hours_weekly int,
+Experience int,
+Specialization varchar(15),
+Primary Key (emp_id,Specialization),
+Foreign key (emp_id) references Employee(emp_id) on delete cascade);
+
+
+CREATE TABLE Visiting (
+emp_id char(4),
+Working_hours_weekly int,
+Experience int,
+Specialization varchar(15),
+Primary Key (emp_id,Specialization),
+Foreign key (emp_id) references Employee(emp_id) on delete cascade);
+
+
+CREATE TABLE Medical_history (
+mh_id char(4),
+blood_pressure varchar(10),
+weight int,
+sugar_level varchar(10),
+height varchar(10),
+blood_group varchar(5),
+current_disease varchar(20) not null,
+chronic_disease varchar(20),
+genetic_disease varchar(20),
+p_id char(4),
+Primary Key (mh_id,p_id),
+foreign key (p_id) references Patient(p_id));
+
+CREATE TABLE tests (
+t_id char(4),
+p_id char(4)  ,
+emp_id char(4) ,
+test_name varchar(20) not null,
+test_result varchar(20),
+Primary Key (t_id,p_id),
+FOREIGN KEY (p_id) REFERENCES Patient(p_id),
+FOREIGN KEY (emp_id) REFERENCES Employee(emp_id)
+);
+
+INSERT INTO Patient VALUES ('P100','Sheetal','Pawar','1981-07-12','katraj Pune',null);
+INSERT INTO Patient VALUES ('P101','Abhay','Tiwari','1979-10-24','pimpri Pune',null); 
+INSERT INTO Patient VALUES ('P102','Rakesh','Sharma','1990-11-01','wai Pune',null);
+
+INSERT INTO Patient_mail_details VALUES ('P101','atiwari@gmail.com');
+INSERT INTO Patient_mail_details VALUES ('P101','abhay@outlook.com');
+INSERT INTO Patient_mail_details VALUES ('P100','spawar@gmail.com');
+INSERT INTO Patient_mail_details VALUES ('P100','sheetal1207@gmail.com');
+INSERT INTO Patient_mail_details VALUES ('P102','RAKESHS@gmail.com');
+
+INSERT INTO Patient_phone_number VALUES('P100',9158200888);
+INSERT INTO Patient_phone_number VALUES('P100',9199998888);
+INSERT INTO Patient_phone_number VALUES('P101',7684592665);
+INSERT INTO Patient_phone_number VALUES('P102',8888819388);
+
+INSERT INTO Employee VALUES ('R001','Priya','Yadav','1994-04-14','Chikli Pune',13000);
+INSERT INTO Employee VALUES ('N001','Suzel','Mosur','1988-09-19','bibewadi Pune',15000);
+INSERT INTO Employee VALUES ('T001','Reshmi','Mandhana','1999-01-01','wakad Pune',20000);
+INSERT INTO Employee VALUES ('P001','Subhash','Gai','1976-03-03','hadapsar Pune',200000);
+INSERT INTO Employee VALUES ('V001','Surekha','Pandey','1991-10-24','Bhosari Pune',35000);
+
+UPDATE Patient
+    -> set emp_id = 'T001'
+    -> where p_id = 'P100';
+
+UPDATE Patient
+    -> set emp_id = 'P001'
+    -> where p_id='P101';
+
+UPDATE Patient
+    -> set emp_id = 'V001'
+    -> where p_id= 'P102';
+
+INSERT INTO Employee_mail_details VALUES ('R001','PY1404@gmail.com');
+INSERT INTO Employee_mail_details VALUES ('R001','Priya@gmail.com');
+INSERT INTO Employee_mail_details VALUES ('N001','Mosur@gmail.com');
+INSERT INTO Employee_mail_details VALUES ('T001','Reshmim@outlook.com');
+INSERT INTO Employee_mail_details VALUES ('T001','Reshmi@outlook.com');
+ INSERT INTO Employee_mail_details VALUES ('P001','Sgai@gmail.com');
+INSERT INTO Employee_mail_details VALUES ('V001','Spandey2410@gmail.com');
+
+INSERT INTO Employee_phone_number VALUES ('R001',9910100222);
+INSERT INTO Employee_phone_number VALUES ('R001',9049005555);
+INSERT INTO Employee_phone_number VALUES ('N001',7765099226);
+INSERT INTO Employee_phone_number VALUES ('T001',8859066231);
+INSERT INTO Employee_phone_number VALUES ('T001',6665977832);
+INSERT INTO Employee_phone_number VALUES ('P001',6665977833);
+INSERT INTO Employee_phone_number VALUES ('V001',9158200888);
+
+INSERT INTO Receptionist VALUES ('R001',30);
+
+INSERT INTO Nurse VALUES ('N001',45);
+
+INSERT INTO trainee VALUES ('T001',30,0,'Cardiology');
+
+INSERT INTO Permanent VALUES ('P001',24,5,'ENT');
+
+INSERT INTO Visiting VALUES ('V001',12,7,'General Physician');
+
+INSERT INTO Medical_history VALUES ('M001','136/90',70,'90 units','5.5 ft','O+ve','Artery Blockage','high BP','NULL','P100');
+INSERT INTO Medical_history VALUES ('M002','120/70',85,'70 units','6.0 ft','B+ve','Troat Infection','NULL','NULL','P101');
+INSERT INTO Medical_history VALUES ('M003','156/80',90,'70 units','5.7 ft','A+ve','UNKNOWN FOR NOW','NULL','Liver Dsyfunction','P102');
+
+INSERT INTO Tests VALUES ('T100','P100','T001','Endoscopy','Artery Blockage');
+INSERT INTO Tests VALUES ('T101','P101','P001','CPR test','not delcared');
+INSERT INTO Tests VALUES ('T102','P102','V001','Blood Culture','Liver dysfunction');
+
+INSERT INTO Employee VALUES ('R002','Saurab','Singh','1998-09-07','Chinchwad Pune',25000);
+INSERT INTO Employee VALUES ('R003','Kushagra','Narang','1984-03-02','Pimple Nilak Pune',20000);
+INSERT INTO Employee VALUES ('N002','Shreya','Dubey','1992-12-30','shivajinagar Pune',26000);
+INSERT INTO Employee VALUES ('N003','Vorun','Vaz','1986-07-23','Pimple Gaurav Pune',23000);
+INSERT INTO Employee VALUES ('T002','Dia','Mirza','1999-01-02','Wagholi Pune',30000);
+INSERT INTO Employee VALUES ('T003','Faiz','Khan','1997-05-22','Pimpri Pune',27000);
+INSERT INTO Employee VALUES ('P002','Shekhar','Mehta','1980-04-14','Magarpatta Pune',200000);
+INSERT INTO Employee VALUES ('P003','Mohammad','Abraham','1983-02-02','Magarpatta Pune',150000);
+
+INSERT INTO Receptionist VALUES ('R002',25);
+INSERT INTO Receptionist VALUES ('R003',30);
+
+INSERT INTO Nurse VALUES ('N002',30);
+INSERT INTO Nurse VALUES ('N003',20);
+
+INSERT INTO trainee VALUES ('T002',17,0,'ENT');
+INSERT INTO trainee VALUES ('T003',15,0,'Neurology');
+
+INSERT INTO Permanent VALUES ('P002',18,15,'Pediatrician');
+INSERT INTO Permanent VALUES ('P003',16,10,'Opthalmology');
