@@ -58,3 +58,21 @@ python clinic.py
 - Improve error messages and form validation
 - Add patient history and billing management
 - Deploy as a standalone executable (.exe) using PyInstaller
+
+## 📸 Screenshots
+
+### 🏠 GUI
+![GUI](https://github.com/user-attachments/assets/ef59f5f1-6fef-4d70-bccb-7222a2834d30)
+
+### INSERT FUNCTION
+![image](https://github.com/user-attachments/assets/e6988e94-ccb4-4d8f-88a3-4470a750aebb)
+![image](https://github.com/user-attachments/assets/54f95104-9aba-4fb6-9df4-79c247d2d871)
+![image](https://github.com/user-attachments/assets/23bf007b-a00d-4387-ab5e-94e52432bf95)
+
+### FIND FUNCTION
+![image](https://github.com/user-attachments/assets/d674def4-1c6a-4783-82f7-fba3d47b3ae0)
+![image](https://github.com/user-attachments/assets/4d3c8184-49bd-4c30-a1d9-59cf8079bcaf)
+
+### DELETE FUNCTION
+![image](https://github.com/user-attachments/assets/1f4f9b04-a6bd-497f-a874-106b4a30c29b)
+
