@@ -64,15 +64,15 @@ python clinic.py
 ### 🏠 GUI
 ![GUI](https://github.com/user-attachments/assets/ef59f5f1-6fef-4d70-bccb-7222a2834d30)
 
-### INSERT FUNCTION
+### ➕ INSERT FUNCTION
 ![image](https://github.com/user-attachments/assets/e6988e94-ccb4-4d8f-88a3-4470a750aebb)
 ![image](https://github.com/user-attachments/assets/54f95104-9aba-4fb6-9df4-79c247d2d871)
-![image](https://github.com/user-attachments/assets/23bf007b-a00d-4387-ab5e-94e52432bf95)
+![image](https://github.com/user-attachments/assets/9479f70f-9077-4b9f-81e4-afe51e04232c)
 
-### FIND FUNCTION
+### 🔍 FIND FUNCTION
 ![image](https://github.com/user-attachments/assets/d674def4-1c6a-4783-82f7-fba3d47b3ae0)
 ![image](https://github.com/user-attachments/assets/4d3c8184-49bd-4c30-a1d9-59cf8079bcaf)
 
-### DELETE FUNCTION
+### 🗑️ DELETE FUNCTION
 ![image](https://github.com/user-attachments/assets/1f4f9b04-a6bd-497f-a874-106b4a30c29b)
 
