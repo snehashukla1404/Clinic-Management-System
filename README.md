@@ -37,21 +37,6 @@ Install dependencies using:
 ```bash
 pip install -r requirements.txt
 
-Database Setup
-1.Open MySQL Workbench (or any client).
-2.Create a new database:
-CREATE DATABASE clinic_db;
-3.Create the required tables (patients, doctors, appointments) as per your application needs.
-4.Update db_config.py with your MySQL username, password, and database name.
-Running the Application
-ython clinic.py
-     
-##🧩 Future Improvements
 
-### Implement user authentication (admin login)
-- Add search functionality
-- Improve error messages and form validation
-- Add patient history and billing management
-- Deploy as a standalone executable (.exe) using PyInstaller
 
 
