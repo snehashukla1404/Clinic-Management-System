@@ -35,7 +35,7 @@ This project helps manage patients, doctors, and appointments efficiently in a c
 
 Install dependencies using:
 ```bash
-`pip install -r requirements.txt`
+pip install -r requirements.txt
 ```
 ## 📦 Database Setup
 - Open **MySQL Workbench** (or any MySQL client).
@@ -46,13 +46,15 @@ CREATE DATABASE clinic_db;
 - Create the required tables (patients, doctors, appointments) as per your application needs.
 - Update db_config.py with your MySQL username, password, and database name.
 
+## 🚀 Running the Application
+- Run the application using the following command:
+```bash
+python clinic.py
+```
+## 🧩 Future Improvements
 
-
-
-
-
-
-
-
-
-
+### Implement user authentication (admin login)
+- Add search functionality
+- Improve error messages and form validation
+- Add patient history and billing management
+- Deploy as a standalone executable (.exe) using PyInstaller
