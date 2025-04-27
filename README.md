@@ -38,13 +38,13 @@ Install dependencies using:
 `pip install -r requirements.txt`
 ```
 ## 📦 Database Setup
-1. Open **MySQL Workbench** (or any MySQL client).
-2. Create a new database:
+- Open **MySQL Workbench** (or any MySQL client).
+- Create a new database:
 ```sql
 CREATE DATABASE clinic_db;
 ```
-3.Create the required tables (patients, doctors, appointments) as per your application needs.
-4.Update db_config.py with your MySQL username, password, and database name.
+- Create the required tables (patients, doctors, appointments) as per your application needs.
+- Update db_config.py with your MySQL username, password, and database name.
 
 
 
