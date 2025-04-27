@@ -18,10 +18,10 @@ This project helps manage patients, doctors, and appointments efficiently in a c
 
 ## 📂 Project Structure
  Clinic-Management-System/
-      ├── clinic.py            # Main GUI application
-      ├── db_config.py         # Database connection settings
-      ├── requirements.txt     # Required Python packages
-      └── README.md            # Project documentation (this file)
+ - clinic.py            # Main GUI application
+ - db_config.py         # Database connection settings
+ - equirements.txt      # Required Python packages
+ - README.md            # Project documentation (this file)
 
 
 ## 🚀 Getting Started
